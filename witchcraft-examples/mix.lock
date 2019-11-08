@@ -1,0 +1,7 @@
+%{
+  "exceptional": {:hex, :exceptional, "2.1.1", "f18f8c1be63aab7fe8f3000cf2a8678936544fc39af1e2bc4a5c3c9e38cd8899", [:mix], [], "hexpm"},
+  "operator": {:hex, :operator, "0.2.0", "b613bdb520a20dbc016d921d444fd2ef2212136be9385d6dca448a2a38d0577f", [:mix], [], "hexpm"},
+  "quark": {:hex, :quark, "2.3.0", "3742ddc14441b4930c7067741879cb5b3e4881f391ea0aed7b138f20d16b30bb", [:mix], [], "hexpm"},
+  "type_class": {:hex, :type_class, "1.2.5", "b972bb22202e801d83e8670228d9a1476cd2c9fc7da00b7039b19d6d06b17905", [:mix], [{:exceptional, "~> 2.1", [hex: :exceptional, repo: "hexpm", optional: false]}], "hexpm"},
+  "witchcraft": {:hex, :witchcraft, "1.0.1", "5db4f9f92be480958a51bee01d3fd283a707576e5e0a0810d4442eac1f47e395", [:mix], [{:exceptional, "~> 2.1", [hex: :exceptional, repo: "hexpm", optional: false]}, {:operator, "~> 0.2", [hex: :operator, repo: "hexpm", optional: false]}, {:quark, "~> 2.2", [hex: :quark, repo: "hexpm", optional: false]}, {:type_class, "~> 1.2", [hex: :type_class, repo: "hexpm", optional: false]}], "hexpm"},
+}
