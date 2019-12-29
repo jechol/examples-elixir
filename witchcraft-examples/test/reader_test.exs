@@ -32,6 +32,42 @@ defmodule ReaderTest do
     assert msg == "Hello, Dave.\nYou have 1000 USD."
   end
 
+  test "Reader local" do
+    greeting =
+      monad %Reader{} do
+        name <- ask(fn %{name: name} -> name end)
+        return("Hello, #{name}.")
+      end
+
+    balance_info =
+      monad %Reader{} do
+        balance <- ask(fn %{balance: balance} -> balance end)
+        return("You have #{balance} USD.")
+      end
+
+    build_message =
+      monad %Reader{} do
+        g <- greeting
+        b <- balance_info |> local(fn %{balance: b} -> %{balance: b * 2} end)
+        c <- balance_info
+        return("#{g}\n#{b}\n#{c}")
+      end
+
+    msg = build_message |> Reader.run(%{name: "Dave", balance: 1000})
+
+    assert msg == "Hello, Dave.\nYou have 2000 USD.\nYou have 1000 USD."
+  end
+
+  test "Reader local - abuse" do
+    str =
+      ask()
+      |> local(fn word -> word <> "!" end)
+      |> local(fn word -> word <> "~" end)
+      |> Reader.run("Hello")
+
+    assert str == "Hello!~"
+  end
+
   test "Writer" do
     send = fn {balance, amount} ->
       monad %Writer{writer: {0, []}} do
@@ -109,29 +145,33 @@ defmodule ReaderTest do
   test "State stack" do
     pop =
       monad %State{} do
+        # get sets value to state
         [h | t] <- get()
-        put(t)
-        return(h)
+        # put sets state
+        put t
+        # return sets value
+        return h
       end
 
     push = fn h ->
       monad %State{} do
+        # modify runs a function on the state
         modify(fn t -> [h | t] end)
-        return(Unit.new())
+        return Unit.new()
       end
     end
 
     stack =
       monad %State{} do
-        # {%Unit{}, [20]}
+        # {%Unit{}, [20]} where [20] is given by State.run()
         # {%Unit{}, [9, 20]}
         push.(9)
         # {%Unit{}, [8, 9, 20]}
         push.(8)
 
-        # a = 8, {[8, 9, 20], [9, 100]}
+        # {8, [9, 20]}, a = 8
         a <- pop
-        # b = 9, {[8, 9, 20], [100]}
+        # {9, [20]}, b = 9
         b <- pop
 
         # {17, [20]}
