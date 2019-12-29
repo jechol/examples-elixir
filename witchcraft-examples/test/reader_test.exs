@@ -88,6 +88,8 @@ defmodule ReaderTest do
 
     bank_work = fn sent, deposited ->
       monad %State{} do
+        k <- get()
+
         # {%Unit{}, 1000}
 
         # {%Unit{}, 900}
@@ -97,9 +99,45 @@ defmodule ReaderTest do
 
         # {1100, 1100}
         get()
+        return(k)
       end
     end
 
     assert bank_work.(100, 200) |> State.run(1000) == {1100, 1100}
+  end
+
+  test "State stack" do
+    pop =
+      monad %State{} do
+        [h | t] <- get()
+        put(t)
+        return(h)
+      end
+
+    push = fn h ->
+      monad %State{} do
+        modify(fn t -> [h | t] end)
+        return(Unit.new())
+      end
+    end
+
+    stack =
+      monad %State{} do
+        # {%Unit{}, [20]}
+        # {%Unit{}, [9, 20]}
+        push.(9)
+        # {%Unit{}, [8, 9, 20]}
+        push.(8)
+
+        # a = 8, {[8, 9, 20], [9, 100]}
+        a <- pop
+        # b = 9, {[8, 9, 20], [100]}
+        b <- pop
+
+        # {17, [20]}
+        return a + b
+      end
+
+    assert stack |> State.run([20]) == {17, [20]}
   end
 end
