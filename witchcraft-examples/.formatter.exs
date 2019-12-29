@@ -4,5 +4,4 @@
   locals_without_parens: [
     let: 1
   ]
-
 ]
