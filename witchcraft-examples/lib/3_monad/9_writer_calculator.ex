@@ -1,39 +1,32 @@
-# defmodule Seminar.Monad.WriterCalculator do
-#   use Witchcraft
+defmodule Seminar.Monad.WriterCalculator do
+  use Witchcraft
 
-#   alias Seminar.Monad.Expr.{Val, Div}
-#   alias Algae.Writer
-#   import Algae.Writer
+  alias Seminar.Monad.Expr.{Val, Div}
+  alias Algae.Writer
+  import Algae.Writer
 
-#   def eval(%Val{val: val}) do
-#     monad do
-#     check_overflow(val)
-#   end
+  def eval(%Val{val: val}) do
+    monad %Writer{writer: {999, "sample"}} do
+      tell "Found #{val}\n"
 
-#   def eval(%Div{num: num, denom: denom}) do
-#     chain do
-#       num_val <- eval(num)
-#       denom_val <- eval(denom)
-#       let quotient = safe_div(num_val, denom_val)
-#       check_overflow(quotient)
-#     end
-#   end
+      return val
+    end
+  end
 
-#   defp safe_div(:overflow, _), do: :overflow
-#   defp safe_div(_, :overflow), do: :overflow
-#   defp safe_div(_, 0), do: :div_by_zero
-#   defp safe_div(n, m), do: n / m
+  def eval(%Div{num: num, denom: denom}) do
+    monad %Writer{writer: {999, "sample"}} do
+      num_val <- eval(num)
+      denom_val <- eval(denom)
+      let quotient = safe_div(num_val, denom_val)
 
-#   defp check_overflow(val) do
-#     monad %Reader{} do
-#       # ask() pulls environment
-#       %{max: max} <- ask()
+      tell "Evaluating #{num_val} / #{denom_val} = #{quotient}\n"
 
-#       return (if is_number(val) or val > max do
-#                 :overflow
-#               else
-#                 val
-#               end)
-#     end
-#   end
-# end
+      return quotient
+      # Desugaring "return quotient" becomes
+      # %Writer{writer: {quotient, ""}}
+    end
+  end
+
+  defp safe_div(_, 0), do: :div_by_zero
+  defp safe_div(n, m), do: n / m
+end
