@@ -1,15 +1,29 @@
-# demdefmodule Seminar.Monad.ReaderCalculator do
-#   use ExUnit.Case
-#   use Witchcraft
+defmodule Seminar.Monad.ReaderCalculatorTest do
+  use ExUnit.Case
+  use Witchcraft
 
-#   alias Seminar.Monad.Expr.{Val, Div}
-#   alias Seminar.Monad.Reader, as: C
+  alias Seminar.Monad.Expr.{Val, Div}
+  alias Seminar.Monad.ReaderCalculator, as: Calc
+  alias Algae.Reader
 
-#   test "success cases" do
-#     assert C.eval(1) == {:ok, 1}
-#     assert C.eval({:+, 1, 2}) == {:ok, 3}
-#     assert C.eval({:-, {:+, 10, 5}, 2}) == {:ok, 13}
-#     assert C.eval({:/, 10, 2}) == {:ok, 5}
-#     assert C.eval({:/, 10, 0}) == {:error, :div_by_zero}
-#   end
-# end
+  test "success cases" do
+    assert Val.new(9)
+           |> Calc.eval()
+           |> Reader.run(%{max: 10}) == 9
+
+    assert Val.new(11)
+           |> Calc.eval()
+           |> Reader.run(%{max: 10}) == :overflow
+
+    hundred_over_one_of_ten =
+      Div.new(
+        Val.new(100),
+        Val.new(0.1)
+      )
+      |> Calc.eval()
+
+    assert hundred_over_one_of_ten |> Reader.run(%{max: 1500}) == 1000
+    assert hundred_over_one_of_ten |> Reader.run(%{max: 500}) == :overflow
+    assert hundred_over_one_of_ten |> Reader.run(%{max: 10}) == :overflow
+  end
+end
