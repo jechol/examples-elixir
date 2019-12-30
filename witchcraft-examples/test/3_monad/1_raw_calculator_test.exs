@@ -1,9 +1,9 @@
-defmodule Seminar.Functor.Maybe.RawCalculatorTest do
+defmodule Seminar.Monad.RawCalculatorTest do
   use ExUnit.Case
   use Witchcraft
 
-  alias Seminar.Adt.Expr.{Val, Div}
-  alias Seminar.Functor.Maybe.RawCalculator, as: Calc
+  alias Seminar.Monad.Expr.{Val, Div}
+  alias Seminar.Monad.RawCalculator, as: Calc
 
   test "success cases" do
     assert Val.new(2) |> Calc.eval() == 2

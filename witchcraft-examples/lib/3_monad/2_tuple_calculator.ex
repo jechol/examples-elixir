@@ -1,7 +1,7 @@
-defmodule Seminar.Functor.Maybe.TupleCalculator do
+defmodule Seminar.Monad.TupleCalculator do
   use Witchcraft
 
-  alias Seminar.Adt.Expr.{Val, Div}
+  alias Seminar.Monad.Expr.{Val, Div}
 
   def eval(%Val{val: val}), do: {:ok, val}
 
@@ -10,11 +10,7 @@ defmodule Seminar.Functor.Maybe.TupleCalculator do
       {:ok, num_val} ->
         case eval(denom) do
           {:ok, denom_val} ->
-            if denom_val == 0 do
-              {:error, :div_by_zero}
-            else
-              {:ok, num_val / denom_val}
-            end
+            safe_div(num_val, denom_val)
 
           {:error, _} = e ->
             e
@@ -24,4 +20,7 @@ defmodule Seminar.Functor.Maybe.TupleCalculator do
         e
     end
   end
+
+  defp safe_div(_, 0), do: {:error, :div_by_zero}
+  defp safe_div(n, m), do: {:ok, n / m}
 end

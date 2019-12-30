@@ -1,8 +1,7 @@
-defmodule Seminar.Adt.Expr do
+defmodule Seminar.Monad.Expr do
   import Algae
 
-  # Expr is data type to be used in examples.
-  # Neither functor nor monad.
+  # Data type to be used in examples.
 
   defsum do
     defdata Val do
