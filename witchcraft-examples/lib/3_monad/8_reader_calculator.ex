@@ -28,7 +28,7 @@ defmodule Seminar.Monad.ReaderCalculator do
       # ask() pulls environment
       %{max: max} <- ask()
 
-      return (if val == :overflow or val > max do
+      return (if is_number(val) and val > max do
                 :overflow
               else
                 val

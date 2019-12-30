@@ -25,5 +25,15 @@ defmodule Seminar.Monad.ReaderCalculatorTest do
     assert hundred_over_one_of_ten |> Reader.run(%{max: 1500}) == 1000
     assert hundred_over_one_of_ten |> Reader.run(%{max: 500}) == :overflow
     assert hundred_over_one_of_ten |> Reader.run(%{max: 10}) == :overflow
+
+    hundred_over_zero =
+      Div.new(
+        Val.new(100),
+        Val.new(0)
+      )
+      |> Calc.eval()
+
+    assert hundred_over_zero |> Reader.run(%{max: 10}) == :overflow
+    assert hundred_over_zero |> Reader.run(%{max: 1000}) == :div_by_zero
   end
 end
