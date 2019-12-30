@@ -1,18 +1,19 @@
 defmodule Seminar.Functor.Maybe.TupleCalculator do
   use Witchcraft
 
-  @ops [:+, :-, :*, :/]
+  alias Seminar.Adt.Expr.{Val, Div}
 
-  def eval(n) when is_number(n), do: {:ok, n}
+  def eval(%Val{val: val}), do: {:ok, val}
 
-  def eval({op, lhs, rhs}) when op in @ops do
-    case eval(lhs) do
-      {:ok, l} ->
-        case eval(rhs) do
-          {:ok, r} ->
-            case {op, r} do
-              {:/, 0} -> {:error, :div_by_zero}
-              _ -> {:ok, apply(Kernel, op, [l, r])}
+  def eval(%Div{num: num, denom: denom}) do
+    case eval(num) do
+      {:ok, num_val} ->
+        case eval(denom) do
+          {:ok, denom_val} ->
+            if denom_val == 0 do
+              {:error, :div_by_zero}
+            else
+              {:ok, div(num_val, denom_val)}
             end
 
           {:error, _} = e ->

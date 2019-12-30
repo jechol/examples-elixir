@@ -1,9 +1,8 @@
 defmodule Seminar.Functor.Maybe.TupleCalculatorTest do
   use ExUnit.Case
-
   use Witchcraft
-  alias Algae
 
+  alias Seminar.Adt.Expr.{Val, Div}
   alias Seminar.Functor.Maybe.TupleCalculator, as: C
 
   test "success cases" do
