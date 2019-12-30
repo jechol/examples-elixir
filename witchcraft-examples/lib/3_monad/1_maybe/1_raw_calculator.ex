@@ -8,6 +8,6 @@ defmodule Seminar.Functor.Maybe.RawCalculator do
   def eval(%Div{num: num, denom: denom}) do
     l = eval(num)
     r = eval(denom)
-    div(l, r)
+    l / r
   end
 end

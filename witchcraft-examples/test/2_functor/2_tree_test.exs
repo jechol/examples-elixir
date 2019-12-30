@@ -4,7 +4,12 @@ defmodule Seminar.Functor.TreeTest do
   alias Seminar.Adt.Tree
   import Witchcraft.Functor
 
-  test "Tree" do
+  test "new" do
+    assert Tree.new(1) == %Tree{data: 1}
+    assert Tree.new(1, nil, Tree.new(2)) == %Tree{data: 1, right: %Tree{data: 2}}
+  end
+
+  test "~>" do
     tree =
       Tree.new(
         1,

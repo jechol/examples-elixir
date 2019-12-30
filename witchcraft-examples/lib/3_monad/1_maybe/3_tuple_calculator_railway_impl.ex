@@ -11,7 +11,7 @@ defmodule Seminar.Functor.Maybe.RailwayCalculator do
       if denom_val == 0 do
         {:error, :div_by_zero}
       else
-        {:ok, div(num_val, denom_val)}
+        {:ok, num_val / denom_val}
       end
     end
   end

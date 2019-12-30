@@ -1,4 +1,15 @@
 import TypeClass
+
+defmodule Seminar.Adt.Tree do
+  import Algae
+
+  defdata do
+    data :: integer()
+    left :: any()
+    right :: any()
+  end
+end
+
 alias Seminar.Adt.Tree
 
 defimpl TypeClass.Property.Generator, for: Tree do
