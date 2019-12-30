@@ -6,6 +6,9 @@
     get: 1,
     put: 1,
     modify: 1,
-    return: 1
+    return: 1,
+    defdata: 1,
+    defdata: 3,
+    defsum: 1
   ]
 ]
