@@ -8,12 +8,10 @@ defmodule Seminar.Adt.ExprTest do
   end
 
   test "Div" do
-    seven_over_two = Div.new(Val.new(7), Val.new(2))
-
-    assert seven_over_two ==
+    assert Div.new(Val.new(7), Val.new(2)) ==
              %Div{num: %Val{val: 7}, denom: %Val{val: 2}}
 
-    assert Div.new(Val.new(10), seven_over_two) ==
+    assert Div.new(Val.new(10), Div.new(Val.new(7), Val.new(2))) ==
              %Div{
                num: %Val{val: 10},
                denom: %Div{num: %Val{val: 7}, denom: %Val{val: 2}}
