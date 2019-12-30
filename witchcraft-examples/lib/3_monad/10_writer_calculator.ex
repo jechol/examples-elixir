@@ -1,7 +1,7 @@
 defmodule Seminar.Monad.WriterCalculator do
   use Witchcraft
 
-  alias Seminar.Monad.Expr.{Val, Div}
+  alias Seminar.Adt.Expr.{Val, Div}
   alias Algae.Writer
   import Algae.Writer
 

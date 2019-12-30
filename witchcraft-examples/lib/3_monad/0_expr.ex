@@ -1,4 +1,4 @@
-defmodule Seminar.Monad.Expr do
+defmodule Seminar.Adt.Expr do
   import Algae
 
   # Data type to be used in examples.

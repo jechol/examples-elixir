@@ -1,7 +1,7 @@
 defmodule Seminar.Monad.ExprTest do
   use ExUnit.Case
 
-  alias Seminar.Monad.Expr.{Val, Div}
+  alias Seminar.Adt.Expr.{Val, Div}
 
   test "Val" do
     assert Val.new(1) == %Val{val: 1}

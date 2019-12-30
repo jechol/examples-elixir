@@ -1,7 +1,7 @@
 defmodule Seminar.Monad.TupleCalculator do
   use Witchcraft
 
-  alias Seminar.Monad.Expr.{Val, Div}
+  alias Seminar.Adt.Expr.{Val, Div}
 
   def eval(%Val{val: val}), do: {:ok, val}
 

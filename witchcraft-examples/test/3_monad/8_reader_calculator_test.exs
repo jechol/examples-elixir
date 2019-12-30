@@ -2,7 +2,7 @@ defmodule Seminar.Monad.ReaderCalculatorTest do
   use ExUnit.Case
   use Witchcraft
 
-  alias Seminar.Monad.Expr.{Val, Div}
+  alias Seminar.Adt.Expr.{Val, Div}
   alias Seminar.Monad.ReaderCalculator, as: Calc
   alias Algae.Reader
 

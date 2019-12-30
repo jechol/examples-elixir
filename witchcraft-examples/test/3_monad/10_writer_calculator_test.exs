@@ -2,7 +2,7 @@ defmodule Seminar.Monad.WriterCalculatorTest do
   use ExUnit.Case
   use Witchcraft
 
-  alias Seminar.Monad.Expr.{Val, Div}
+  alias Seminar.Adt.Expr.{Val, Div}
   alias Seminar.Monad.WriterCalculator, as: Calc
   alias Algae.Writer
 

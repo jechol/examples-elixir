@@ -2,7 +2,7 @@ defmodule Seminar.Monad.TupleCalculatorTest do
   use ExUnit.Case
   use Witchcraft
 
-  alias Seminar.Monad.Expr.{Val, Div}
+  alias Seminar.Adt.Expr.{Val, Div}
   alias Seminar.Monad.TupleCalculator, as: Calc
 
   test "success cases" do

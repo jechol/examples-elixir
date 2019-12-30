@@ -1,7 +1,7 @@
 defmodule Seminar.Monad.MaybeCalculator do
   use Witchcraft
 
-  alias Seminar.Monad.Expr.{Val, Div}
+  alias Seminar.Adt.Expr.{Val, Div}
   alias Algae.Maybe.{Just, Nothing}
 
   def eval(%Val{val: val}), do: Just.new(val)
