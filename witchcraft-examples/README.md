@@ -13,5 +13,6 @@ Example cases are
 ## How to run
 
 ```bash
+$ mix deps.get
 $ mix test
 ```
