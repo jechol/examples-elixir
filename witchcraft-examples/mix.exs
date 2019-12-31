@@ -1,9 +1,9 @@
-defmodule WcStudy.MixProject do
+defmodule WitchcraftExamples.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :wc_study,
+      app: :witchcraft_examples,
       version: "0.1.0",
       elixir: "~> 1.9",
       start_permanent: Mix.env() == :prod,
