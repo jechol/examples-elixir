@@ -1,7 +1,7 @@
 defmodule Seminar.Functor.TreeTest do
   use ExUnit.Case
 
-  alias Seminar.Adt.Tree
+  alias Example.Tree
   import Witchcraft.Functor
 
   test "new" do

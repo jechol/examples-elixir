@@ -1,7 +1,7 @@
-defmodule Seminar.Monad.ReaderCalculator do
+defmodule Example.ReaderCalculator do
   use Witchcraft
 
-  alias Seminar.Adt.Expr.{Val, Div}
+  alias Example.Expr.{Val, Div}
   alias Algae.Reader
   import Algae.Reader
 

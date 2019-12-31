@@ -1,10 +1,10 @@
-defmodule Seminar.Monad.StateTreeRankerTest do
+defmodule Example.StateTreeRankerTest do
   use ExUnit.Case
   use Witchcraft
 
   alias Algae.State
-  alias Seminar.Adt.Tree
-  alias Seminar.Monad.StateTreeRanker, as: Ranker
+  alias Example.Tree
+  alias Example.StateTreeRanker, as: Ranker
 
   test "success cases" do
     tree = Tree.new(9, nil, Tree.new(7, Tree.new(5)))

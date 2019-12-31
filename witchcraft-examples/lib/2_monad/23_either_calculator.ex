@@ -1,7 +1,7 @@
-defmodule Seminar.Monad.EitherCalculator do
+defmodule Example.EitherCalculator do
   use Witchcraft
 
-  alias Seminar.Adt.Expr.{Val, Div}
+  alias Example.Expr.{Val, Div}
   alias Algae.Either.{Left, Right}
 
   def eval(%Val{val: val}), do: Right.new(val)

@@ -1,9 +1,9 @@
-defmodule Seminar.Monad.WriterCalculatorTest do
+defmodule Example.WriterCalculatorTest do
   use ExUnit.Case
   use Witchcraft
 
-  alias Seminar.Adt.Expr.{Val, Div}
-  alias Seminar.Monad.WriterCalculator, as: Calc
+  alias Example.Expr.{Val, Div}
+  alias Example.WriterCalculator, as: Calc
   alias Algae.Writer
 
   test "success cases" do

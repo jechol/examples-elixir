@@ -1,9 +1,9 @@
-defmodule Seminar.Monad.TupleCalculatorTest do
+defmodule Example.TupleCaseCalculatorTest do
   use ExUnit.Case
   use Witchcraft
 
-  alias Seminar.Adt.Expr.{Val, Div}
-  alias Seminar.Monad.TupleCalculator, as: Calc
+  alias Example.Expr.{Val, Div}
+  alias Example.TupleCaseCalculator, as: Calc
 
   test "success cases" do
     assert Val.new(2) |> Calc.eval() == {:ok, 2}

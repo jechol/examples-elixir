@@ -1,8 +1,8 @@
-defmodule Seminar.Monad.StateTreeRanker do
+defmodule Example.StateTreeRanker do
   use Witchcraft
 
   alias Algae.State
-  alias Seminar.Adt.Tree
+  alias Example.Tree
 
   import Algae.State
   import Witchcraft.Monad

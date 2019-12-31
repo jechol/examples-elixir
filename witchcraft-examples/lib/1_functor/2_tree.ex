@@ -1,6 +1,6 @@
 import TypeClass
 
-defmodule Seminar.Adt.Tree do
+defmodule Example.Tree do
   import Algae
 
   # Product type to be used in the following examples.
@@ -12,7 +12,7 @@ defmodule Seminar.Adt.Tree do
   end
 end
 
-alias Seminar.Adt.Tree
+alias Example.Tree
 
 defimpl TypeClass.Property.Generator, for: Tree do
   def generate(_) do

@@ -1,4 +1,4 @@
-defmodule Seminar.Monad.MonoidTest do
+defmodule Example.MonoidTest do
   use ExUnit.Case
   use Witchcraft
 

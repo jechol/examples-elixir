@@ -1,7 +1,7 @@
-defmodule Seminar.Monad.RawCalculator do
+defmodule Example.RawCalculator do
   use Witchcraft
 
-  alias Seminar.Adt.Expr.{Val, Div}
+  alias Example.Expr.{Val, Div}
 
   def eval(%Val{val: val}), do: val
 

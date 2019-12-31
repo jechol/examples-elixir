@@ -1,4 +1,4 @@
-defmodule Seminar.Adt.Expr do
+defmodule Example.Expr do
   import Algae
 
   # Sum type of Val and Div to be used in following examples.

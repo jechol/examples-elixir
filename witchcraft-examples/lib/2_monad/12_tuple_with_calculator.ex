@@ -1,7 +1,7 @@
-defmodule Seminar.Monad.TupleRailwayCalculator do
+defmodule Example.TupleRailwayCalculator do
   use Witchcraft
 
-  alias Seminar.Adt.Expr.{Val, Div}
+  alias Example.Expr.{Val, Div}
 
   def eval(%Val{val: val}), do: {:ok, val}
 
