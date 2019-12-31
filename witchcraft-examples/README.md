@@ -7,7 +7,7 @@
 
 Example cases are 
 
-* Calculator 
+* Calculator (division only)
 * Tree labeler
 
 ## How to run
