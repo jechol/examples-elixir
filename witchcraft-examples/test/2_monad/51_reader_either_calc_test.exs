@@ -17,7 +17,7 @@ defmodule Example.ReaderEitherCalcTest do
            |> Reader.run(%{max: 9}) == %Left{left: :overflow}
   end
 
-  test "Div cases with overflow" do
+  test "Div with overflow" do
     hundred_over_one_of_ten =
       Div.new(
         Val.new(100),
@@ -30,7 +30,7 @@ defmodule Example.ReaderEitherCalcTest do
     assert hundred_over_one_of_ten |> Reader.run(%{max: 10}) == %Left{left: :overflow}
   end
 
-  test "Div cases with div_by_zero" do
+  test "Div with div_by_zero" do
     hundred_over_zero =
       Div.new(
         Val.new(100),

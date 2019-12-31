@@ -6,34 +6,36 @@ defmodule Example.ReaderCalc do
   import Algae.Reader
 
   def eval(%Val{val: val}) do
-    check_overflow(val)
+    monad %Reader{} do
+      %{max: max} <- ask()
+
+      return check_overflow(val, max)
+    end
   end
 
   def eval(%Div{num: num, denom: denom}) do
-    chain do
-      num_val <- eval(num)
-      denom_val <- eval(denom)
+    monad %Reader{} do
+      # `Reader` context.
+      # `ask()` returns environments given with `Reader.run()`
+      %{max: max} <- ask()
 
-      let quotient = safe_div(num_val, denom_val)
-      check_overflow(quotient)
+      # `ask()` is also available in `eval(num)`,
+      # so that we don't need to pass environments `%{max: _}`
+      num <- eval(num)
+      denom <- eval(denom)
+
+      return (with {:ok, num} <- num,
+                   {:ok, denom} <- denom,
+                   {:ok, quotient} <- safe_div(num, denom) do
+                check_overflow(quotient, max)
+              end)
     end
   end
 
-  defp safe_div(:overflow, _), do: :overflow
-  defp safe_div(_, :overflow), do: :overflow
-  defp safe_div(_, 0), do: :div_by_zero
-  defp safe_div(n, m), do: n / m
+  defp safe_div(_, 0), do: {:error, :div_by_zero}
+  defp safe_div(n, m), do: {:ok, n / m}
 
-  defp check_overflow(val) do
-    monad %Reader{} do
-      # ask() pulls environment
-      %{max: max} <- ask()
-
-      return (if is_number(val) and val > max do
-                :overflow
-              else
-                val
-              end)
-    end
+  defp check_overflow(num, max) do
+    if num > max, do: {:error, :overflow}, else: {:ok, num}
   end
 end
