@@ -1,4 +1,4 @@
-defmodule Example.StateTreeRanker do
+defmodule Example.StateTreeLabeler do
   use Witchcraft
 
   alias Algae.State
@@ -9,13 +9,13 @@ defmodule Example.StateTreeRanker do
 
   def rank_post_order(%Tree{left: left, right: right}) do
     monad %State{} do
-      ranked_left <- rank_post_order(left)
-      ranked_right <- rank_post_order(right)
+      labeled_left <- rank_post_order(left)
+      labeled_right <- rank_post_order(right)
 
       rank <- get()
       modify fn r -> r + 1 end
 
-      return %Tree{data: rank, left: ranked_left, right: ranked_right}
+      return %Tree{data: rank, left: labeled_left, right: labeled_right}
     end
   end
 

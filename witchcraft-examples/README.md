@@ -1,21 +1,11 @@
-# WitchcraftExamples
+# Witchcraft Examples
 
-**TODO: Add description**
+Witchcraft examples for
 
-## Installation
+1. Maybe, Either
+2. Reader, Writer, State
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `witchcraft_examples` to your list of dependencies in `mix.exs`:
+Example cases are 
 
-```elixir
-def deps do
-  [
-    {:witchcraft_examples, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/witchcraft_examples](https://hexdocs.pm/witchcraft_examples).
-
+1. calculator 
+2. tree labeler
