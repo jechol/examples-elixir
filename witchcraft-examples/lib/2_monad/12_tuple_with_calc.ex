@@ -1,4 +1,4 @@
-defmodule Example.TupleRailwayCalc do
+defmodule Example.TupleWithCalc do
   use Witchcraft
 
   alias Example.Expr.{Val, Div}
