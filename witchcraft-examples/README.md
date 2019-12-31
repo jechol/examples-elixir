@@ -9,3 +9,9 @@ Example cases are
 
 1. calculator 
 2. tree labeler
+
+## How to run
+
+```bash
+$ mix test
+```
