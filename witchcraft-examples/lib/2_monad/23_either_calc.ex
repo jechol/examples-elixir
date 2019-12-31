@@ -1,4 +1,4 @@
-defmodule Example.EitherCalculator do
+defmodule Example.EitherCalc do
   use Witchcraft
 
   alias Example.Expr.{Val, Div}

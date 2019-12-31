@@ -1,9 +1,9 @@
-defmodule Example.WriterCalculatorTest do
+defmodule Example.WriterCalcTest do
   use ExUnit.Case
   use Witchcraft
 
   alias Example.Expr.{Val, Div}
-  alias Example.WriterCalculator, as: Calc
+  alias Example.WriterCalc, as: Calc
   alias Algae.Writer
 
   test "success cases" do

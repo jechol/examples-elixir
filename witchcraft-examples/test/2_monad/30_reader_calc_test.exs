@@ -1,9 +1,9 @@
-defmodule Example.ReaderCalculatorTest do
+defmodule Example.ReaderCalcTest do
   use ExUnit.Case
   use Witchcraft
 
   alias Example.Expr.{Val, Div}
-  alias Example.ReaderCalculator, as: Calc
+  alias Example.ReaderCalc, as: Calc
   alias Algae.Reader
 
   test "success cases" do

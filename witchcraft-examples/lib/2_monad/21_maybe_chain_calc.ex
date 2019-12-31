@@ -1,4 +1,4 @@
-defmodule Example.MaybeChainCalculator do
+defmodule Example.MaybeChainCalc do
   use Witchcraft
 
   alias Example.Expr.{Val, Div}

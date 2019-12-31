@@ -1,4 +1,4 @@
-defmodule Example.TupleCaseCalculator do
+defmodule Example.TupleCaseCalc do
   use Witchcraft
 
   alias Example.Expr.{Val, Div}

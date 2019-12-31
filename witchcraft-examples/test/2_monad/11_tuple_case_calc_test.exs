@@ -1,9 +1,9 @@
-defmodule Example.TupleCaseCalculatorTest do
+defmodule Example.TupleCaseCalcTest do
   use ExUnit.Case
   use Witchcraft
 
   alias Example.Expr.{Val, Div}
-  alias Example.TupleCaseCalculator, as: Calc
+  alias Example.TupleCaseCalc, as: Calc
 
   test "success cases" do
     assert Val.new(2) |> Calc.eval() == {:ok, 2}
