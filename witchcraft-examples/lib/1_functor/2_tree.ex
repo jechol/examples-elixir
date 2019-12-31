@@ -3,6 +3,8 @@ import TypeClass
 defmodule Seminar.Adt.Tree do
   import Algae
 
+  # Product type to be used in the following examples.
+
   defdata do
     data :: integer()
     left :: any()
