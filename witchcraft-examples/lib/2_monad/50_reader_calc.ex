@@ -24,11 +24,14 @@ defmodule Example.ReaderCalc do
       num <- eval(num)
       denom <- eval(denom)
 
-      return (with {:ok, num} <- num,
-                   {:ok, denom} <- denom,
-                   {:ok, quotient} <- safe_div(num, denom) do
-                check_overflow(quotient, max)
-              end)
+      let quotient =
+            (with {:ok, num} <- num,
+                  {:ok, denom} <- denom,
+                  {:ok, quotient} <- safe_div(num, denom) do
+               check_overflow(quotient, max)
+             end)
+
+      return quotient
     end
   end
 

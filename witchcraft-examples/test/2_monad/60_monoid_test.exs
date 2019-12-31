@@ -3,7 +3,7 @@ defmodule Example.MonoidTest do
   use Witchcraft
 
   # Beware! Monoid is not monad!
-  # It's just used in Writer monad to append logs.
+  # It's used in Writer monad to accumlate values.
 
   alias Witchcraft.{Semigroup, Monoid}
 

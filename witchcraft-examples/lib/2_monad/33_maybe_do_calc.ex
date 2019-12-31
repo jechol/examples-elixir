@@ -7,7 +7,7 @@ defmodule Example.MaybeDoCalc do
   def eval(%Val{val: val}), do: Just.new(val)
 
   def eval(%Div{num: num, denom: denom}) do
-    chain do
+    monad %Just{} do
       num_val <- eval(num)
       denom_val <- eval(denom)
       safe_div(num_val, denom_val)

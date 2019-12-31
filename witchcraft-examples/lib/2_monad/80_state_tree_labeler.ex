@@ -7,19 +7,21 @@ defmodule Example.StateTreeLabeler do
   import Algae.State
   import Witchcraft.Monad
 
-  def rank_post_order(%Tree{left: left, right: right}) do
+  def label_post_order(%Tree{left: left, right: right}) do
     monad %State{} do
-      labeled_left <- rank_post_order(left)
-      labeled_right <- rank_post_order(right)
+      # We don't need to pass state.
+      labeled_left <- label_post_order(left)
+      labeled_right <- label_post_order(right)
 
-      rank <- get()
+      label <- get()
+      # same with `put(label + 1)`
       modify fn r -> r + 1 end
 
-      return %Tree{data: rank, left: labeled_left, right: labeled_right}
+      return %Tree{data: label, left: labeled_left, right: labeled_right}
     end
   end
 
-  def rank_post_order(nil) do
+  def label_post_order(nil) do
     monad %State{} do
       return nil
     end
