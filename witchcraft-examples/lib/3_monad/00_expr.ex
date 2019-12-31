@@ -1,7 +1,7 @@
 defmodule Seminar.Adt.Expr do
   import Algae
 
-  # Data type to be used in examples.
+  # Sum type of Val and Div to be used in following examples.
 
   defsum do
     defdata Val do
