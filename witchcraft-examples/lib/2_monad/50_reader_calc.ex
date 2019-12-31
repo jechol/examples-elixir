@@ -13,6 +13,7 @@ defmodule Example.ReaderCalc do
     chain do
       num_val <- eval(num)
       denom_val <- eval(denom)
+
       let quotient = safe_div(num_val, denom_val)
       check_overflow(quotient)
     end
