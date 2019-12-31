@@ -1,14 +1,14 @@
 # Witchcraft Examples
 
-Witchcraft examples for
+[Witchcraft](https://github.com/witchcrafters/witchcraft) (Monad for Elixir) examples for
 
-1. Maybe, Either
-2. Reader, Writer, State
+* Maybe, Either
+* Reader, Writer, State
 
 Example cases are 
 
-1. calculator 
-2. tree labeler
+* Calculator 
+* Tree labeler
 
 ## How to run
 
