@@ -1,4 +1,4 @@
-defmodule Example.ReaderCalc do
+defmodule Example.ReaderTupleCalc do
   use Witchcraft
 
   alias Example.Expr.{Val, Div}
