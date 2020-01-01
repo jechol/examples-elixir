@@ -14,17 +14,15 @@ defmodule Example.ReaderTupleCalc do
   end
 
   def eval(%Div{num: num, denom: denom}) do
-    # Macros available in `Reader` monad,
+    # New macros available in `Reader` monad,
     #
     # 4. ask() : Returns a reader that returns environment given with `Reader.run(env)`
     # 5. local(reader, fun) : Run reader with env locally modified by funtion `fun`.
     monad %Reader{} do
-      # `Reader` context.
-      # `ask()` returns environments given with `Reader.run()`
       %{max: max} <- ask()
 
-      # `ask()` is also available in `eval(num)`,
-      # so that we don't need to pass environments `%{max: _}`
+      # `ask()` is also available in monad returned by `eval(num)`,
+      # so we don't need to pass environments `%{max: _}` explicitly.
       num <- eval(num)
       denom <- eval(denom)
 

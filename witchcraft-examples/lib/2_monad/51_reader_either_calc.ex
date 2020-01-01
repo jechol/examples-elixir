@@ -17,18 +17,14 @@ defmodule Example.ReaderEitherCalc do
 
   def eval(%Div{num: num, denom: denom}) do
     monad %Reader{} do
-      # `Reader` context.
-      # `ask()` returns environments given with `Reader.run()`
       %{max: max} <- ask()
 
-      # `ask()` is also available in `eval(num)`,
-      # so that we don't need to pass environments `%{max: _}`
       num <- eval(num)
       denom <- eval(denom)
 
       return (monad %Right{} do
-                # `Either` context.
-                # So, ask() is not available here.
+                # In `Either` context.
+                # So ask() is no longer available.
                 num_val <- num
                 denom_val <- denom
 

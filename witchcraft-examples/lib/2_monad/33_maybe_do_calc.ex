@@ -7,7 +7,7 @@ defmodule Example.MaybeDoCalc do
   def eval(%Val{val: val}), do: Just.new(val)
 
   def eval(%Div{num: num, denom: denom}) do
-    # Macros available in all monad,
+    # Macros available in every monad,
     #
     # 1. value <- monad : Unwraps a value from a monad.
     # 2. return value : Wraps a value into a monad.
