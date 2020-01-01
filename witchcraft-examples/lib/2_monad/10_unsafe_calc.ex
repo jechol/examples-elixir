@@ -1,4 +1,4 @@
-defmodule Example.RawCalc do
+defmodule Example.UnsafeCalc do
   use Witchcraft
 
   alias Example.Expr.{Val, Div}

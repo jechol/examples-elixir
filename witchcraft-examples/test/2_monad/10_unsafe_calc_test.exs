@@ -1,9 +1,9 @@
-defmodule Example.RawCalcTest do
+defmodule Example.UnsafeCalcTest do
   use ExUnit.Case
   use Witchcraft
 
   alias Example.Expr.{Val, Div}
-  alias Example.RawCalc, as: Calc
+  alias Example.UnsafeCalc, as: Calc
 
   test "success cases" do
     assert Val.new(2) |> Calc.eval() == 2
