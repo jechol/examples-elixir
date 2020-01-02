@@ -3,6 +3,7 @@ defmodule Example.WriterCalc do
 
   alias Example.Expr.{Val, Div}
   alias Algae.Writer
+  alias Algae.Either.{Left, Right}
   import Algae.Writer
 
   # Macros available in `Writer` monad,
@@ -14,7 +15,7 @@ defmodule Example.WriterCalc do
       # `tell` accumulates monoid values.
       tell [v]
 
-      return {:ok, val}
+      return Right.new(val)
     end
   end
 
@@ -26,9 +27,13 @@ defmodule Example.WriterCalc do
       tell [%Div{num: num, denom: denom}]
 
       let quotient =
-            (with {:ok, num} <- num,
-                  {:ok, denom} <- denom do
-               safe_div(num, denom)
+            (monad %Right{} do
+               # In `Either` context.
+               # So ask() is no longer available.
+               num_val <- num
+               denom_val <- denom
+
+               safe_div(num_val, denom_val)
              end)
 
       # After desugaring, `return quotient` becomes %Writer{writer: {quotient, []}}
@@ -36,6 +41,6 @@ defmodule Example.WriterCalc do
     end
   end
 
-  defp safe_div(_, 0), do: {:error, :div_by_zero}
-  defp safe_div(n, m), do: {:ok, n / m}
+  defp safe_div(_, 0), do: Left.new(:div_by_zero)
+  defp safe_div(n, m), do: Right.new(n / m)
 end
