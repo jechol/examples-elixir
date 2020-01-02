@@ -6,6 +6,8 @@ defmodule Example.StateTreeLabelerTest do
   alias Example.Tree
   alias Example.StateTreeLabeler, as: Labeler
 
+  @moduletag :exercise
+
   test "success cases" do
     tree = Tree.new(:a, Tree.new(:b), Tree.new(:c, Tree.new(:d), Tree.new(:e)))
 

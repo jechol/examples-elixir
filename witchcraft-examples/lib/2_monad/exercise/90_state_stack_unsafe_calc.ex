@@ -18,7 +18,8 @@ defmodule Example.StateStackUnsafeCalc do
       :ok <- eval(denom)
       :ok <- eval(num)
 
-      modify fn [num, denom | tail] -> [num / denom | tail] end
+      # Exercise. Fill here using `modify/1`
+
       return :ok
     end
   end

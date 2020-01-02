@@ -15,4 +15,7 @@ Example cases are
 ```bash
 $ mix deps.get
 $ mix test
+
+# This will fail. Answers are lib/2_monad/exercise/answer.zip
+$ mix test --include exercise 
 ```

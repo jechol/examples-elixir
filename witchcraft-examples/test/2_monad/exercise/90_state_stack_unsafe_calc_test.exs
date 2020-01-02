@@ -6,6 +6,8 @@ defmodule Example.StateStackUnsafeCalcTest do
   alias Example.Expr.{Val, Div}
   alias Example.StateStackUnsafeCalc, as: Calc
 
+  @moduletag :exercise
+
   test "success val" do
     assert Val.new(2) |> Calc.eval() |> State.run([]) == {:ok, [2]}
   end

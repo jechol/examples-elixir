@@ -19,17 +19,7 @@ defmodule Example.StateStackSafeCalc do
       :ok <- eval(denom)
       :ok <- eval(num)
 
-      modify fn [num, denom | tail] ->
-        quotient =
-          monad %Right{} do
-            num <- num
-            denom <- denom
-
-            safe_div(num, denom)
-          end
-
-        [quotient | tail]
-      end
+      # Exercise. Fill here using `modify/1`
 
       return :ok
     end
