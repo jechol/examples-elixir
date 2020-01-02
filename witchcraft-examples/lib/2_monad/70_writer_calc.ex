@@ -5,10 +5,11 @@ defmodule Example.WriterCalc do
   alias Algae.Writer
   import Algae.Writer
 
+  # Macros available in `Writer` monad,
+  #
+  # 4. tell(log_entry) : Returns a writer that appends `log_entry` to log.
+
   def eval(%Val{val: val} = v) do
-    # Macros available in `Writer` monad,
-    #
-    # 4. tell(log_entry) : Returns a writer that appends `log_entry` to log.
     monad %Writer{writer: {999, ["sample"]}} do
       # `tell` accumulates monoid values.
       tell [v]

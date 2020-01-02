@@ -5,6 +5,11 @@ defmodule Example.ReaderTupleCalc do
   alias Algae.Reader
   import Algae.Reader
 
+  # New macros available in `Reader` monad,
+  #
+  # 4. ask() : A reader that returns environment given with `Reader.run(env)`
+  # 5. local(reader, fun) : Run reader with env locally modified by funtion `fun`.
+
   def eval(%Val{val: val}) do
     monad %Reader{} do
       %{max: max} <- ask()
@@ -14,17 +19,10 @@ defmodule Example.ReaderTupleCalc do
   end
 
   def eval(%Div{num: num, denom: denom}) do
-    # New macros available in `Reader` monad,
-    #
-    # 4. ask() : A reader that returns environment given with `Reader.run(env)`
-    # 5. local(reader, fun) : Run reader with env locally modified by funtion `fun`.
     monad %Reader{} do
-      #  Same with
-      # %{max: max} <- %Reader{reader: fn env -> env end}
+      #  Same with %{max: max} <- %Reader{reader: fn env -> env end}
       %{max: max} <- ask()
 
-      # `ask()` is also available in monad returned by `eval(num)`,
-      # so we don't need to pass environments `%{max: _}` explicitly.
       num <- eval(num)
       denom <- eval(denom)
 

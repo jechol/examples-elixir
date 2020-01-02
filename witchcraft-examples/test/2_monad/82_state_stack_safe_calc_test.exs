@@ -1,4 +1,4 @@
-defmodule Example.StateStackSafeCalcTest do
+defmodule Example.StateStackRwCalcTest do
   use ExUnit.Case
   use Witchcraft
 

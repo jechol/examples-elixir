@@ -7,22 +7,19 @@ defmodule Example.StateTreeLabeler do
   import Algae.State
   import Witchcraft.Monad
 
+  # New macros available in `State` monad,
+  #
+  # 4. get() : {state, state} (Copies state to value so that `<-` binds to state)
+  # 5. put(new_state) : {value, new_state}
+  # 6. modify(fun) : {value, fun.(state)}
+
   def label_post_order(%Tree{left: left, right: right}) do
-    # New macros available in `Writer` monad,
-    #
-    # 4. get() : Returns a monad that set value as state.
-    # 5. put(new_state) : Returns a monad that set new_state as state.
-    # 6. modify(fun) : Return a monad that runs `fun` on state.
     monad %State{} do
-      # We don't need to pass state explicitly.
       labeled_left <- label_post_order(left)
       labeled_right <- label_post_order(right)
 
-      # `get()` returns monad with {val = state, state},
-      # label <- {val, state} sets label as val.
       label <- get()
 
-      # Same with `put(label + 1)` because label is set to state.
       modify fn r -> r + 1 end
 
       return %Tree{data: label, left: labeled_left, right: labeled_right}
