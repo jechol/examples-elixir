@@ -15,8 +15,8 @@ defmodule Example.StateStackCalc do
 
   def eval(%Div{num: num, denom: denom}) do
     monad %State{} do
-      _ <- eval(denom)
-      _ <- eval(num)
+      :ok <- eval(denom)
+      :ok <- eval(num)
 
       modify fn [num, denom | tail] -> [num / denom | tail] end
       return :ok
