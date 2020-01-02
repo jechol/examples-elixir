@@ -16,6 +16,9 @@ alias Example.Tree
 
 defimpl TypeClass.Property.Generator, for: Tree do
   def generate(_) do
+    # Used to check Tree meets Functor property, e.g. left identity.
+    # tree = TypeClass.Property.Generator.
+    # Functor.map()
     Tree.new(10, Tree.new(20), Tree.new(30))
   end
 end

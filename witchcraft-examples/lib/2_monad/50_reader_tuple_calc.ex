@@ -16,10 +16,10 @@ defmodule Example.ReaderTupleCalc do
   def eval(%Div{num: num, denom: denom}) do
     # New macros available in `Reader` monad,
     #
-    # 4. ask() : Returns a reader that returns environment given with `Reader.run(env)`
+    # 4. ask() : A reader that returns environment given with `Reader.run(env)`
     # 5. local(reader, fun) : Run reader with env locally modified by funtion `fun`.
     monad %Reader{} do
-      %{max: max} <- ask()
+      %{max: max} <- %Reader{reader: fn env -> env end}
 
       # `ask()` is also available in monad returned by `eval(num)`,
       # so we don't need to pass environments `%{max: _}` explicitly.
