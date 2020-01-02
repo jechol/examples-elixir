@@ -1,4 +1,4 @@
-defmodule Example.StateStackCalc do
+defmodule Example.StateStackUnsafeCalc do
   use Witchcraft
 
   alias Example.Expr.{Val, Div}

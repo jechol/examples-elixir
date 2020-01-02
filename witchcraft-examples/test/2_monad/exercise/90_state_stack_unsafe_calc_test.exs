@@ -1,10 +1,10 @@
-defmodule Example.StateStackCalcTest do
+defmodule Example.StateStackUnsafeCalcTest do
   use ExUnit.Case
   use Witchcraft
 
   alias Algae.State
   alias Example.Expr.{Val, Div}
-  alias Example.StateStackCalc, as: Calc
+  alias Example.StateStackUnsafeCalc, as: Calc
 
   test "success val" do
     assert Val.new(2) |> Calc.eval() |> State.run([]) == {:ok, [2]}
