@@ -1,4 +1,4 @@
-defmodule NaiveCalc do
+defmodule UnsafeCalc do
   alias Expr.{Val, Div}
 
   def eval(%Val{val: val}), do: val
