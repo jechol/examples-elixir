@@ -4,11 +4,11 @@ defmodule UnsafeCalcTest do
   alias Expr.{Val, Div}
 
   test "success case" do
-    # 6 / (4 / 2) = 3
-    assert Val.new(6)
+    # 10 / (4 / 2) = 5
+    assert Val.new(10)
            |> Div.new(Div.new(Val.new(4), Val.new(2)))
            |> UnsafeCalc.eval() ==
-             3
+             5
   end
 
   test "div by zero" do
