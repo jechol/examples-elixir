@@ -3,7 +3,7 @@ defmodule MaybeBindTest do
 
   alias Maybe.{Just, Nothing}
 
-  import MaybeBind
+  import Bind
 
   def inc(n), do: Just.new(n + 1)
 

@@ -1,4 +1,4 @@
-defmodule MaybeBind do
+defmodule Bind do
   alias Maybe.{Just, Nothing}
 
   def bind(maybe, func) do
