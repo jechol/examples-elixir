@@ -4,8 +4,7 @@ defmodule MaybeCalcTest do
   alias Expr.{Val, Div}
   alias Maybe.{Just, Nothing}
 
-  @calcs [MaybeCaseCalc, MaybeBindCalc]
-  # @calcs [MaybeCaseCalc, MaybeChainCalc, MaybeOpCalc, MaybeDoCalc]
+  @calcs [MaybeCaseCalc, MaybeBindCalc, MaybeDoCalc]
 
   test "success cases" do
     for calc <- @calcs do
