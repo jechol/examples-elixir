@@ -10,7 +10,7 @@ defmodule DoNotation do
     |> Enum.reverse()
     |> Enum.reduce(fn
       {:<-, _, [left, right]}, acc ->
-        quote do
+        quote context: Elixir do
           unquote(right) |> Bind.bind(fn unquote(left) -> unquote(acc) end)
         end
     end)
