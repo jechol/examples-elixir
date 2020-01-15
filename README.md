@@ -1,21 +1,17 @@
-# MonadFromScratch
+# Monad From Scratch
 
-**TODO: Add description**
+Examples showing 
+
+* What `Maybe` monad and its `bind` operators are all about.
+* How Haskell-like `do-notation` is possible in Elixir using macro.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `monad_from_scratch` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:monad_from_scratch, "~> 0.1.0"}
-  ]
-end
+```bash
+$ git clone https://github.com/jechol/witchcraft_examples.git
+$ mix test
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/monad_from_scratch](https://hexdocs.pm/monad_from_scratch).
+## More examples
 
+More advanced examples for `Either`, `Reader`, `Writer` and `State` monads are avaliable at https://github.com/jechol/witchcraft_examples
