@@ -9,7 +9,7 @@ Examples showing
 ## Installation
 
 ```bash
-$ git clone https://github.com/jechol/witchcraft_examples.git
+$ git clone https://github.com/jechol/monad_from_scratch.git
 $ mix test
 ```
 
