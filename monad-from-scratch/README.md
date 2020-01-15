@@ -3,7 +3,7 @@
 Examples showing 
 
 * How `Maybe` monad is useful to structure control-flow.
-* Mechanisms of `Maybe` and `bind`.
+* Mechanism of `bind`.
 * How Haskell-like `do-notation` can be defined with Elixir macro.
 
 ## Installation
