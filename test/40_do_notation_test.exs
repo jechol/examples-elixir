@@ -4,14 +4,14 @@ defmodule DoNotationTest do
   require DoNotation
 
   test "do_notation" do
-    from =
+    from_ast =
       quote do
         a_val <- eval(a)
         b_val <- eval(b)
         safe_div(a_val, b_val)
       end
 
-    to =
+    to_ast =
       quote do
         eval(a)
         |> Bind.bind(fn a_val ->
@@ -22,8 +22,8 @@ defmodule DoNotationTest do
         end)
       end
 
-    converted = DoNotation.convert_ast(from)
+    converted_ast = DoNotation.convert_ast(from_ast)
 
-    assert Macro.to_string(converted) == Macro.to_string(to)
+    assert Macro.to_string(converted_ast) == Macro.to_string(to_ast)
   end
 end
