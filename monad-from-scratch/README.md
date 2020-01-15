@@ -2,8 +2,9 @@
 
 Examples showing 
 
-* What `Maybe` monad and its `bind` operators are all about.
-* How Haskell-like `do-notation` is possible in Elixir with macro.
+* How `Maybe` monad is useful to structure control-flow.
+* Mechanisms of `Maybe` and `bind`.
+* How Haskell-like `do-notation` can be defined with Elixir macro.
 
 ## Installation
 
