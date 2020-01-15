@@ -3,7 +3,7 @@
 Examples showing 
 
 * What `Maybe` monad and its `bind` operators are all about.
-* How Haskell-like `do-notation` is possible in Elixir using macro.
+* How Haskell-like `do-notation` is possible in Elixir with macro.
 
 ## Installation
 
