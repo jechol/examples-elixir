@@ -6,5 +6,5 @@ pub fn add_test() {
   // assert gleam_calc.add(1, 2) == 3
   "ok"
   |> atom.from_string
-  |> should.be_error
+  |> should.be_ok
 }
