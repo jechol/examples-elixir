@@ -22,8 +22,16 @@ pub fn sum(tree: Tree) {
 
   // +.
   val +. left_sum +. right_sum
-
-  // Try to use this method with
-  // $ mix release
-  // $ _build/.. start_iex
 }
+
+// Note 1.
+// Inter-op via iex
+//
+// $ mix release
+// $ _build/.. start_iex
+// iex> :m00_syntax@s00_tree.sum({:tree, 10.0, {:some, {:tree, 3.0, :none, :none}}, :none})
+
+// Note 2.
+// Inter-op gleam type <-> Elixir record
+//
+// See s00_tree.ex, s00_tree_test.exs
