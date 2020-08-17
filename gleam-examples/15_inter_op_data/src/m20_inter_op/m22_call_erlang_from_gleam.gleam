@@ -1,6 +1,7 @@
 // Erlang array
 // https://erlang.org/doc/man/array.html
 pub external type FixedArray(a)
+// No constructor.
 
 pub type ArrayError {
   IndexOutOfRange
