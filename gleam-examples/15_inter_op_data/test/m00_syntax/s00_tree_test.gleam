@@ -1,10 +1,10 @@
 import gleam/should
-import gleam/option.{Option, Some, None}
-import m00_syntax/s00_tree.{Tree}
+import m00_syntax/s00_tree.{Tree, Nil}
 
 pub fn sum_test() {
-  let a = Tree(val: 10.0, left: None, right: None)
+  let left = Tree(val: 3.0, left: Nil, right: Nil)
+  let root = Tree(val: 10.0, left: left, right: Nil)
 
-  s00_tree.sum(a)
-  |> should.equal(10.0)
+  s00_tree.sum(root)
+  |> should.equal(13.0)
 }

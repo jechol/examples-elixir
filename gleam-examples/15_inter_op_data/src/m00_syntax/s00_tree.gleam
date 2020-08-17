@@ -1,27 +1,17 @@
 // Module name is auto.
-import gleam/option.{Option, Some, None}
 
 pub type Tree {
   // No type class. -> Should implement specifically for Float.
-  Tree(val: Float, left: Option(Tree), right: Option(Tree))
+  Tree(val: Float, left: Tree, right: Tree)
+  Nil
 }
 
-pub fn sum(tree: Tree) {
-  // Destructuring.
-  let Tree(val: val, left: left, right: right) = tree
-
-  // case is only flow-control syntax. No if, etc.
-  let left_sum = case left {
-    Some(tree) -> sum(tree)
-    None -> 0.0
+pub fn sum(tree: Tree) -> Float {
+  case tree {
+    Nil -> 0.0
+    Tree(val: val, left: left, right: right) ->
+      val +. sum(left) +. sum(right)
   }
-  let right_sum = case right {
-    Some(tree) -> sum(tree)
-    None -> 0.0
-  }
-
-  // +.
-  val +. left_sum +. right_sum
 }
 
 // Note 1.
