@@ -1,5 +1,5 @@
 import gleam/should
-import m00_syntax/s00_tree.{Tree, Nil}
+import m00_syntax/s00_tree.{Nil, Tree}
 
 pub fn sum_test() {
   let left = Tree(val: 3.0, left: Nil, right: Nil)
