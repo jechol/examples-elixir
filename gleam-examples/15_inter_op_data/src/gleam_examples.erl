@@ -1,3 +1,3 @@
--module(inter_op_data).
+-module(gleam_examples).
 
 -include_lib("eunit/include/eunit.hrl").

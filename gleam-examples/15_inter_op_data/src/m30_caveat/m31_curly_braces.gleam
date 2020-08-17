@@ -1,7 +1,7 @@
 import gleam/int
 
 pub fn some_math(a, b, c) {
-  { a + b } * c
+  let _ = { a + b } * c
 
   // ( a + b ) * c is syntax error here.
 

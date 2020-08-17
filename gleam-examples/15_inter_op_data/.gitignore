@@ -20,6 +20,6 @@ erl_crash.dump
 *.ez
 
 # Ignore package tarball (built via "mix hex.build").
-inter_op_data-*.tar
+gleam_examples-*.tar
 
 gen
