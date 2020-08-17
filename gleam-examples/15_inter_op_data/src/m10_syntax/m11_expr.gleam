@@ -26,11 +26,9 @@ pub fn eval(expr: Expr) -> Result(Float, DivErr) {
     }
   }
   // case eval(num) {
-  //   Ok(num_val) -> {
-  //     case eval(denom) {
-  //       Ok(denom_val) -> safe_div(num_val, denom_val)
-  //       e -> e
-  //     }
+  //   Ok(num_val) -> case eval(denom) {
+  //     Ok(denom_val) -> safe_div(num_val, denom_val)
+  //     e -> e
   //   }
   //   e -> e
   // }
