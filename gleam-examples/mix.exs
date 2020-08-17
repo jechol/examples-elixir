@@ -1,4 +1,4 @@
-defmodule InterOpData.MixProject do
+defmodule GleamExamples.MixProject do
   use Mix.Project
 
   def project do
