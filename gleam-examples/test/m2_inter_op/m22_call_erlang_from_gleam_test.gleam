@@ -1,5 +1,5 @@
 import gleam/should
-import m20_inter_op/m22_call_erlang_from_gleam.{
+import m2_inter_op/m22_call_erlang_from_gleam.{
   FixedArray, IndexOutOfRange
 } as array
 

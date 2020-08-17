@@ -1,4 +1,4 @@
-defmodule M20InterOp.M21Expr do
+defmodule M2InterOp.M21Expr do
   import Record
 
   # pub type Expr {

@@ -1,5 +1,5 @@
 import gleam/should
-import m10_syntax/m11_expr.{Div, DivByZero, Expr, Val} as expr
+import m1_syntax/m11_expr.{Div, DivByZero, Expr, Val} as expr
 
 pub fn safe_div_ok_test() {
   expr.safe_div(10.0, 2.0)
