@@ -1,5 +1,2 @@
 
-// See elixir files
-
-// expr.ex for record
-// expr_test.exs for calling convention
+// See elixir files under lib/ and test/.
