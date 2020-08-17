@@ -1,6 +1,8 @@
-## Confusing " and ' 
+## Confusing string
 
-|       | Elixir         | Erlang         | Gleam         |
-| ----- | -------------- | -------------- | ------------- |
-| "abc" | binary string  | character list | binary string |
-| 'abc' | character list | atom           | syntax error  |
+
+|        | Elixir    | Erlang         | Gleam          |
+| ------ | --------- | -------------- | -------------- |
+| "abc"  | string    | char list      | string         |
+| 'abc'  | char list | atom           | syntax error   |
+| binary | "abc"     | <<"abc"/utf8>> | <<"abc":utf8>> |
