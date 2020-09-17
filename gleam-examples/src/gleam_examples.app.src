@@ -1,0 +1,10 @@
+{application,gleam_examples,
+             [{description,"Sample mixed project"},
+              {vsn,"0.1.0"},
+              {registered,[]},
+              {applications,[kernel,stdlib,gleam_examples]},
+              {env,[]},
+              {modules,[]},
+              {licenses,["Apache 2.0"]},
+              {links,[]},
+              {include_files, ["gleam.toml", "gen"]}]}.
