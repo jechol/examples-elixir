@@ -1,8 +1,8 @@
 %{
-  "algae": {:hex, :algae, "1.2.4", "53ca4954d9fe8254650c742bdbda48c2ed7a23344b8b6e784556d23ec7c09c69", [:mix], [{:quark, "~> 2.3", [hex: :quark, repo: "hexpm", optional: false]}, {:type_class, "~> 1.2", [hex: :type_class, repo: "hexpm", optional: false]}, {:witchcraft, "~> 1.0", [hex: :witchcraft, repo: "hexpm", optional: false]}], "hexpm", "6c3c73318b7e75919f112c759ada00ca4e2396280d26b507d6d949615bd463fc"},
+  "algae": {:git, "https://github.com/witchcrafters/algae.git", "067e2b0a02c5c0c4183051807dfa733e2ee43fe4", []},
   "exceptional": {:hex, :exceptional, "2.1.3", "cb17cb9b7c4882e763b82db08ba317678157ca95970fae96b31b3c90f5960c3d", [:mix], [], "hexpm", "59d67ae2df6784e7a957087742ae9011f220c3d1523706c5cd7ee0741bca5897"},
-  "operator": {:hex, :operator, "0.2.0", "b613bdb520a20dbc016d921d444fd2ef2212136be9385d6dca448a2a38d0577f", [:mix], [], "hexpm", "cb533c378569053acd021fff5970691e267830818ad70c483331da96197aa784"},
-  "quark": {:hex, :quark, "2.3.0", "3742ddc14441b4930c7067741879cb5b3e4881f391ea0aed7b138f20d16b30bb", [:mix], [], "hexpm", "6314742f5810b791b776d0682decd042d4407889e8f4e53ebfe12d1bbfbe018d"},
-  "type_class": {:hex, :type_class, "1.2.5", "b972bb22202e801d83e8670228d9a1476cd2c9fc7da00b7039b19d6d06b17905", [:mix], [{:exceptional, "~> 2.1", [hex: :exceptional, repo: "hexpm", optional: false]}], "hexpm", "554cf5c49e92d3a371b85239ad842b2e69d034fed65921f4f99d7d910b6c50fe"},
-  "witchcraft": {:hex, :witchcraft, "1.0.1", "5db4f9f92be480958a51bee01d3fd283a707576e5e0a0810d4442eac1f47e395", [:mix], [{:exceptional, "~> 2.1", [hex: :exceptional, repo: "hexpm", optional: false]}, {:operator, "~> 0.2", [hex: :operator, repo: "hexpm", optional: false]}, {:quark, "~> 2.2", [hex: :quark, repo: "hexpm", optional: false]}, {:type_class, "~> 1.2", [hex: :type_class, repo: "hexpm", optional: false]}], "hexpm", "24885da16abd8ef4803fbace1d0dbddcab50029098e01dc8cb4d19fdf56a4fda"},
+  "operator": {:hex, :operator, "0.2.1", "4572312bbd3e63a5c237bf15c3a7670d568e3651ea744289130780006e70e5f5", [:mix], [], "hexpm", "1990cc6dc651d7fff04636eef06fc64e6bc1da83a1da890c08ca3432e17e267a"},
+  "quark": {:git, "https://github.com/witchcrafters/quark.git", "b05a8a0dc70715522303a7d0eac6f8debcc75c42", []},
+  "type_class": {:git, "https://github.com/witchcrafters/type_class.git", "442bbfbac336231351feecb83ec7bc9ccbe07a57", []},
+  "witchcraft": {:git, "https://github.com/jechol/witchcraft.git", "3158086fb54b249da5bc2926ddaa3a3dd8604774", []},
 }

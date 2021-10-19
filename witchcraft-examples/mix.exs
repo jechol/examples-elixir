@@ -21,9 +21,11 @@ defmodule WitchcraftExamples.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:algae, ">= 0.0.0"}
-      # {:dep_from_hexpm, "~> 0.3.0"},
-      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
+      {:algae, git: "https://github.com/witchcrafters/algae.git", override: true},
+      {:quark, git: "https://github.com/witchcrafters/quark.git", override: true},
+      {:type_class, git: "https://github.com/witchcrafters/type_class.git", override: true},
+      # Maintain until PR is merged. (https://github.com/witchcrafters/witchcraft/pull/83)
+      {:witchcraft, git: "https://github.com/jechol/witchcraft.git", override: true}
     ]
   end
 end
