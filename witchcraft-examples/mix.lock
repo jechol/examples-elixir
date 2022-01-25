@@ -3,7 +3,7 @@
   "exceptional": {:hex, :exceptional, "2.1.3", "cb17cb9b7c4882e763b82db08ba317678157ca95970fae96b31b3c90f5960c3d", [:mix], [], "hexpm", "59d67ae2df6784e7a957087742ae9011f220c3d1523706c5cd7ee0741bca5897"},
   "operator": {:hex, :operator, "0.2.1", "4572312bbd3e63a5c237bf15c3a7670d568e3651ea744289130780006e70e5f5", [:mix], [], "hexpm", "1990cc6dc651d7fff04636eef06fc64e6bc1da83a1da890c08ca3432e17e267a"},
   "quark": {:git, "https://github.com/witchcrafters/quark.git", "7ef186f4158889b60b19a47b9303cf6fcca445c7", []},
-  "reather": {:git, "https://github.com/jechol/reather.git", "fb2c30fb57acd67113c41a2325fde2c1a95eaad3", []},
+  "reather": {:git, "https://github.com/jechol/reather.git", "4b019cadbc1d02603073513f520798d3382bca4b", []},
   "type_class": {:git, "https://github.com/witchcrafters/type_class.git", "1936167ccf897df061fc7ad035a3d10554857f31", []},
   "witchcraft": {:git, "https://github.com/jechol/witchcraft.git", "d287367c6897035cdd0aba9d6151d2f330d1bbab", []},
 }
