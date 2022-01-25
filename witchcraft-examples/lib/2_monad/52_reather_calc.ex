@@ -3,20 +3,24 @@ defmodule Example.ReatherCalc do
 
   alias Example.Expr.{Val, Div}
 
-  reather eval(%Val{val: val}) do
-    %{max: max} <- Reather.ask()
+  def eval(%Val{val: val}) do
+    monad %Reather{} do
+      %{max: max} <- Reather.ask()
 
-    return check_overflow(val, max)
+      return check_overflow(val, max)
+    end
   end
 
-  reather eval(%Div{num: num, denom: denom}) do
-    %{max: max} <- Reather.ask()
+  def eval(%Div{num: num, denom: denom}) do
+    monad %Reather{} do
+      %{max: max} <- Reather.ask()
 
-    num <- eval(num)
-    denom <- eval(denom)
+      num <- eval(num)
+      denom <- eval(denom)
 
-    quotient <- return safe_div(num, denom)
-    return check_overflow(quotient, max)
+      quotient <- return safe_div(num, denom)
+      return check_overflow(quotient, max)
+    end
   end
 
   # Functions: Pure arguments -> Wrapped return value
