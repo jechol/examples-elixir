@@ -26,14 +26,11 @@ defmodule Example.ReaderTupleCalc do
       num <- eval(num)
       denom <- eval(denom)
 
-      let quotient =
-            (with {:ok, num} <- num,
-                  {:ok, denom} <- denom,
-                  {:ok, quotient} <- safe_div(num, denom) do
-               check_overflow(quotient, max)
-             end)
-
-      return quotient
+      return (with {:ok, num} <- num,
+                   {:ok, denom} <- denom,
+                   {:ok, quotient} <- safe_div(num, denom) do
+                check_overflow(quotient, max)
+              end)
     end
   end
 
