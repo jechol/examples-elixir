@@ -5,5 +5,5 @@
   "quark": {:git, "https://github.com/witchcrafters/quark.git", "7ef186f4158889b60b19a47b9303cf6fcca445c7", []},
   "reather": {:git, "https://github.com/jechol/reather.git", "4b019cadbc1d02603073513f520798d3382bca4b", []},
   "type_class": {:git, "https://github.com/witchcrafters/type_class.git", "1936167ccf897df061fc7ad035a3d10554857f31", []},
-  "witchcraft": {:git, "https://github.com/jechol/witchcraft.git", "d287367c6897035cdd0aba9d6151d2f330d1bbab", []},
+  "witchcraft": {:git, "https://github.com/witchcrafters/witchcraft.git", "6c61c3ecd5b431c52e8b60aafb05596d9182205e", []},
 }

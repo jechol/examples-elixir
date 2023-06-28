@@ -25,7 +25,7 @@ defmodule WitchcraftExamples.MixProject do
       {:quark, git: "https://github.com/witchcrafters/quark.git", override: true},
       {:type_class, git: "https://github.com/witchcrafters/type_class.git", override: true},
       # Maintain until PR is merged. (https://github.com/witchcrafters/witchcraft/pull/83)
-      {:witchcraft, git: "https://github.com/jechol/witchcraft.git", override: true},
+      {:witchcraft, git: "https://github.com/witchcrafters/witchcraft.git", override: true},
       {:reather, git: "https://github.com/jechol/reather.git"}
     ]
   end
