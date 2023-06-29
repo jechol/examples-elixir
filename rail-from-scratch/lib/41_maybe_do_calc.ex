@@ -1,13 +1,12 @@
-defmodule MaybeDoCalc do
+defmodule TupleDoCalc do
   require DoNotation
 
   alias Expr.{Val, Div}
-  alias Maybe.{Just, Nothing}
 
-  defp safe_div(_, 0), do: Nothing.new()
-  defp safe_div(n, m), do: Just.new(n / m)
+  defp safe_div(_, 0), do: {:error, :div_by_zero}
+  defp safe_div(n, m), do: {:ok, n / m}
 
-  def eval(%Val{val: val}), do: Just.new(val)
+  def eval(%Val{val: val}), do: {:ok, val}
 
   def eval(%Div{num: num, denom: denom}) do
     DoNotation.bind do

@@ -1,26 +1,20 @@
 defmodule MaybeBindTest do
   use ExUnit.Case
 
-  alias Maybe.{Just, Nothing}
-
   import Bind
 
-  def inc(n), do: Just.new(n + 1)
+  def inc(n), do: {:ok, n + 1}
 
-  test "Just" do
-    assert Just.new(1)
-           |> bind(&inc/1) ==
-             Just.new(2)
+  test "ok" do
+    assert {:ok, 1} |> bind(&inc/1) == {:ok, 2}
 
-    assert Just.new(1)
+    assert {:ok, 1}
            |> bind(&inc/1)
            |> bind(&inc/1) ==
-             Just.new(3)
+             {:ok, 3}
   end
 
-  test "Nothing" do
-    assert Nothing.new()
-           |> bind(&inc/1) ==
-             Nothing.new()
+  test "error" do
+    assert {:error, :div_by_zero} |> bind(&inc/1) == {:error, :div_by_zero}
   end
 end

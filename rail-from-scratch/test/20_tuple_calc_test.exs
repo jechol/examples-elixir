@@ -1,26 +1,25 @@
-defmodule MaybeCalcTest do
+defmodule TupleCalcTest do
   use ExUnit.Case
 
   alias Expr.{Val, Div}
-  alias Maybe.{Just, Nothing}
 
-  @calcs [MaybeCaseCalc, MaybeBindCalc, MaybeDoCalc]
+  @calcs [TupleCaseCalc, TupleWithCalc]
 
   test "success cases" do
     for calc <- @calcs do
-      assert Val.new(2) |> calc.eval() == %Just{just: 2}
+      assert Val.new(2) |> calc.eval() == {:ok, 2}
 
       assert Div.new(
                Val.new(4),
                Val.new(2)
              )
-             |> calc.eval() == %Just{just: 2}
+             |> calc.eval() == {:ok, 2}
 
       assert Div.new(
                Val.new(10),
                Div.new(Val.new(4), Val.new(2))
              )
-             |> calc.eval() == %Just{just: 5}
+             |> calc.eval() == {:ok, 5}
     end
   end
 
@@ -30,7 +29,7 @@ defmodule MaybeCalcTest do
                Val.new(10),
                Val.new(0)
              )
-             |> calc.eval() == %Nothing{}
+             |> calc.eval() == {:error, :div_by_zero}
     end
   end
 end

@@ -1,10 +1,8 @@
 defmodule Bind do
-  alias Maybe.{Just, Nothing}
-
-  def bind(maybe, func) do
-    case maybe do
-      %Nothing{} -> %Nothing{}
-      %Just{just: data} -> func.(data)
+  def bind(tuple, func) do
+    case tuple do
+      {:error, _} = e -> e
+      {:ok, data} -> func.(data)
     end
   end
 end
