@@ -1,3 +1,4 @@
 %{
   "operator": {:hex, :operator, "0.2.0", "b613bdb520a20dbc016d921d444fd2ef2212136be9385d6dca448a2a38d0577f", [:mix], [], "hexpm"},
+  "rail": {:hex, :rail, "1.0.1", "0b755f1e63e5bfa7e3415fd19d1a25a2aa09c64fd0089b84ef76ed54e68fa870", [:mix], [], "hexpm", "9b12e399f25166c970f25fd01cc2530960a3a90b76cc001003ae0c50e6bb5c8e"},
 }

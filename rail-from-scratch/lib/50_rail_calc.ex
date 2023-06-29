@@ -1,4 +1,5 @@
-defmodule TupleWithCalc do
+defmodule RailCalc do
+  use Rail
   alias Expr.{Val, Div}
 
   defp safe_div(_, 0), do: {:error, :div_by_zero}
@@ -7,9 +8,8 @@ defmodule TupleWithCalc do
   def eval(%Val{val: val}), do: {:ok, val}
 
   def eval(%Div{num: num, denom: denom}) do
-    with {:ok, num_val} <- eval(num),
-         {:ok, denom_val} <- eval(denom) do
-      safe_div(num_val, denom_val)
-    end
+    num_val <- eval(num)
+    denom_val <- eval(denom)
+    safe_div(num_val, denom_val)
   end
 end

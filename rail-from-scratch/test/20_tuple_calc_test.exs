@@ -3,7 +3,7 @@ defmodule TupleCalcTest do
 
   alias Expr.{Val, Div}
 
-  @calcs [TupleCaseCalc, TupleWithCalc]
+  @calcs [TupleCaseCalc, TupleWithCalc, RailCalc]
 
   test "success cases" do
     for calc <- @calcs do
